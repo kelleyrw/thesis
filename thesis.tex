@@ -1,0 +1,78 @@
+\documentclass[12pt,chapterheads,oneside]{ucsd}
+
+\usepackage{amsmath, amscd, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{xfrac}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{ifthen}
+\usepackage{xspace}
+\usepackage{calc}
+\usepackage{slashbox}
+\usepackage{subfig}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{makeidx}
+\usepackage[bottom]{footmisc}
+\usepackage[hyphens]{url}
+\usepackage[color=red!40,textwidth=24mm,textsize=footnotesize]{todonotes}
+\usepackage[hidelinks,linktocpage,breaklinks]{hyperref}                                  
+\usepackage{rotating}
+\usepackage{afterpage}
+\usepackage{xparse}
+\usepackage{lineno}
+\usepackage{slashed}
+\usepackage{bm}
+
+\hypersetup{ pdfauthor   = {Kelley, Ryan},
+             pdftitle    = {Search for New Physics in a Final State with Same-Sign Dileptons and Jets with 8 TeV Center of Mass Energy},
+             pdfkeywords = {LHC CERN CMS SUSY Same-Sign Ryan Kelley},
+             pdfcreator  = {LaTeX with hyperref package},
+             pdfproducer = {LaTeX} }
+
+\input{include/definitions}                                                        
+\includeonly{include/frontmatter}                                                    
+
+\setlength{\parindent}{0.5in}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\makeindex
+\synctex=1
+
+\hyphenation{back-ground-only}
+
+\begin{document}
+\graphicspath{
+{figs/}
+{intro/figs/}
+{cms/figs/}
+{ss/figs/}
+{bkgd/figs/}
+{eff/figs/}
+{results/figs/}
+{results/yields/high_pt/exclusive}
+{results/yields/low_pt/exclusive}
+}
+
+\include{include/frontmatter}
+% \linenumbers
+
+\input{intro/intro}
+\input{cms/cms}
+\input{ss/ss}
+\input{evtsel/evtsel}
+\input{bkgd/bkgd}
+\input{eff/eff}
+\input{results/results}
+\input{conclusion/conclusion}
+
+\bibliographystyle{lucas.bst}
+\bibliography{include/refs}
+
+\appendix
+\input{fakerate/fakerate}
+\input{mc_details/mc_details}
+
+\end{document}

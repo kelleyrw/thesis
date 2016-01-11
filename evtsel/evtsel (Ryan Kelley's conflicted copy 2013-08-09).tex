@@ -1,0 +1,661 @@
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+\chapter{Analysis Selections}
+\label{ch:evtsel}
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+In Chapter~\ref{ch:ss}, we discussed the motivation for selecting same-sign
+dileptons pairs in this analysis. blah blah...
+
+define high pt analysis. 
+
+define low pt analysis.
+
+introduce the idea of search regions. 
+
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+\section{Data Samples}
+\label{sec:evtsel_samples}
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+
+% --------------------------------------------------------------------------- %
+\subsection{Collision Data}
+\label{sec:evtsel_samples_data}
+% --------------------------------------------------------------------------- %
+This analysis uses data collected during the 2012 run at $\sqrt{s} = 8\ \TeV$.
+Dilepton events are selected from primary datasets collected using electron and
+muon trigger paths. Only runs and luminosity sections from good data taking
+periods are used, where such periods are defined using the flags delivered by
+the CMS data quality monitoring, detector, and physics validation teams. The
+datasets used in this analysis are listed in Tables~\ref{tab:evtsel_datasets_hpt},
+and \ref{tab:evtsel_datasets_lpt} with the integrated luminosity corresponding to
+\usedLumi.
+
+% --------------------------------------------------------------------------- %
+\begin{table}[hbt!]
+\resizebox{0.7\textwidth}{!}{\begin{minipage}{\textwidth}
+\begin{center}
+\begin{tabular}{lc}\hline\hline
+Name                                                    & Run Range                          \\ \hline
+{\tt /DoubleMu/Run2012A-13Jul2012-v1/AOD              } & 190456-193621                      \\ 
+{\tt /DoubleMu/Run2012B-13Jul2012-v1/AOD              } & 193834-196531                      \\ 
+{\tt /DoubleMu/Run2012A-recover-06Aug2012-v1/AOD      } & 190949 190945 190906 190895 190782 \\ 
+{\tt /DoubleMu/Run2012C-24Aug2012-v1/AOD              } & 198022-198523                      \\ 
+{\tt /DoubleMu/Run2012C-PromptReco-v2/AOD             } & 198934-203755                      \\ 
+{\tt /DoubleMu/Run2012D-PromptReco-v1/AOD             } & 203773-208913                      \\ 
+{\tt /DoubleElectron/Run2012A-13Jul2012-v1/AOD        } & 190456-193621                      \\ 
+{\tt /DoubleElectron/Run2012B-13Jul2012-v1/AOD        } & 193834-196531                      \\ 
+{\tt /DoubleElectron/Run2012A-recover-06Aug2012-v1/AOD} & 190949 190945 190906 190895 190782 \\ 
+{\tt /DoubleElectron/Run2012C-24Aug2012-v1/AOD        } & 198022-198523                      \\ 
+{\tt /DoubleElectron/Run2012C-PromptReco-v2/AOD       } & 198934-203755                      \\ 
+{\tt /DoubleElectron/Run2012D-PromptReco-v1/AOD       } & 203773-208913                      \\ 
+{\tt /MuEG/Run2012A-13Jul2012-v1/AOD                  } & 190456-193621                      \\ 
+{\tt /MuEG/Run2012B-13Jul2012-v1/AOD                  } & 193834-196531                      \\ 
+{\tt /MuEG/Run2012A-recover-06Aug2012-v1/AOD          } & 190949 190945 190906 190895 190782 \\ 
+{\tt /MuEG/Run2012C-24Aug2012-v1/AOD                  } & 198022-198523                      \\ 
+{\tt /MuEG/Run2012C-PromptReco-v2/AOD                 } & 198934-203755                      \\ 
+{\tt /MuEG/Run2012D-PromptReco-v1/AOD                 } & 203773-208913                      \\ 
+\hline\hline
+\end{tabular}
+\end{center}
+\end{minipage} 
+}
+\caption{\label{tab:evtsel_datasets_hpt}
+Primary datasets used by the \hpt analysis along with the relevant run-ranges.
+}
+\end{table}
+% --------------------------------------------------------------------------- %
+\begin{table}[hbt]
+\begin{center}
+\tiny{
+	\begin{tabular}{lc}\hline
+		Name                                                  & Run Range                          \\ \hline
+		\verb=/MuHad/Run2012A-13Jul2012-v1/AOD=               & 190456-193621                      \\ 
+		\verb=/MuHad/Run2012B-13Jul2012-v1/AOD=               & 193834-196531                      \\ 
+		\verb=/MuHad/Run2012A-recover-06Aug2012-v1/AOD=       & 190949 190945 190906 190895 190782 \\ 
+		\verb=/MuHad/Run2012C-24Aug2012-v1/AOD=               & 198022-198523                      \\ 
+		\verb=/MuHad/Run2012C-PromptReco-v2/AOD=              & 198934-203755                      \\ 
+		\verb=/MuHad/Run2012D-PromptReco-v1/AOD=              & 203773-208913                      \\ 
+		\verb=/ElectronHad/Run2012A-13Jul2012-v1/AOD=         & 190456-193621                      \\ 
+		\verb=/ElectronHad/Run2012B-13Jul2012-v1/AOD=         & 193834-196531                      \\ 
+		\verb=/ElectronHad/Run2012A-recover-06Aug2012-v1/AOD= & 190949 190945 190906 190895 190782 \\ 
+		\verb=/ElectronHad/Run2012C-24Aug2012-v1/AOD=         & 198022-198523                      \\ 
+		\verb=/ElectronHad/Run2012C-PromptReco-v2/AOD=        & 198934-203755                      \\ 
+		\verb=/ElectronHad/Run2012D-PromptReco-v1/AOD=        & 203773-208913                      \\ 
+		\hline\hline
+		\end{tabular}
+}
+\caption{\label{tab:evtsel_datasets_lpt}
+    Primary datasets used by the \lpt analysis along with the relevant run-ranges.
+}
+\end{center}
+\end{table}
+
+% --------------------------------------------------------------------------- %
+\subsection{Simulated Data}
+\label{sec:evtsel_samples_mc}
+% --------------------------------------------------------------------------- %
+The analysis uses simulated data samples for candidate signal models and the
+relevant backgrounds. The contributions for real same-sign dilepton events are
+estimated directly from simulated data. These "rare" process were discussed
+in Chapter~\ref{sec:ss_rare} and constitute an irreducible background for
+this analysis. Simulated samples of \Zgs and \ttbar processes are used to
+cross-check the partially data-driven estimate of the background contribution
+from charge mis-reconstruction, as well as systematic uncertainties of the
+lepton selection. The data-driven technique developed to estimate the background
+from fake leptons is applied to simulated \ttbar and \Wj samples as part of
+systematic uncertainty study on these methods. Simulated SUSY samples are used
+for the study of the systematic uncertainties as well as to develop a model
+of the selection efficiencies. These samples are also used in the extraction
+of upper limits on the observed and expected cross section for these models.
+The contribution from double fakes from QCD processes is determined using a
+data-driven method, but the available simulated samples are used to study some
+dependencies of the fake lepton prediction method. Simulated data samples are
+normalized to an integrated luminosity of \usedLumi, unless otherwise stated.
+Details of the simulated samples can be found in Table~\ref{tab:evtsel_datasets_mc}.
+
+{\bf \color{red} add other samples}
+% --------------------------------------------------------------------------- %
+%\begin{landscape}
+\begin{table}[!hbt]
+\begin{center}
+\footnotesize{
+    \begin{tabular}{lccc}
+    \hline\hline
+    Sample     & Cross Section (pb) & Equivalent Luminostiry (\fbinv) \\ \hline
+    \ttZ       & 0.208              & 1021.68                         \\
+    \ttW       & 0.232              & 845.03                          \\
+    \ttWW      & 0.002037           & 106931.76                       \\
+    \ttG       & 2.166              & 33.06                           \\
+    \tbZ       & 0.0114             & 13026.67                        \\
+    \ZZZ       & 0.0055269          & 40692.61                        \\
+    \WWW       & 0.08217            & 2737.02                         \\
+    \WWG       & 0.528              & 407.43                          \\
+    \WZZ       & 0.01922            & 12946.70                        \\
+    \WWZ       & 0.05798            & 3832.94                         \\
+    \ZZ        & 0.1769             & 27177.36                        \\
+    \WZ        & 1.0575             & 1908.25                         \\
+    \qqWmWm    & 0.08888            & 1084.52                         \\
+    \qqWpWp    & 0.2482             & 402.84                          \\
+    \WWdps     & 0.5879             & 1418.68                         \\
+    \Wgsmm     & 1.914              & 156.73                          \\
+    \Wgstt     & 0.336              & 148.80                          \\
+    \HToWW     & 0.2604             & 769.72                          \\
+    \HToZZ     & 0.0320             & 15652.26                        \\
+    \HToTauTau & 0.0177             & 5478.02                         \\
+    \hline\hline
+    \end{tabular}
+}
+\caption{\label{tab:evtsel_datasets_mc}
+Sources of true same-sign dileptons from Standard Model processes. Cross
+sections are next-to-leading order. The equivalent integrated luminosity
+of these simulated events is listed in the column on the far right. The
+contributions from these process to the background is taken directly from
+simulation.
+}
+\end{center}
+\end{table}
+
+% --------------------------------------------------------------------------- %
+\section{Event Selections}
+\label{sec:evtsel_evt}
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+The event selection consists of the following general requirements with
+amplifying details in the following sub-sections:
+\begin{itemize}
+\item we require a dilepton trigger;
+\item we select events with two good same sign isolated leptons; the \hpt
+analysis requires both leptons to have $\pt > 20 \GeV$ and the \lpt analysis
+requires the leptons to have $\pt > 10 \GeV$.
+\item $\m_{\ell\ell} > 8 \GeV$ to reject low mass resonances.
+\item For most search regions, a significant amount of \met to reduce SM
+backgrounds, particularly that from charge mis-measurement in \Zll events.
+\item We require a significant amount of hadronic energy to reduce standard
+model backgrounds, particularly mi-identified leptons in \Wj events.
+\item We veto events if the invariant mass of either hypothesis lepton and a
+third good lepton in the event is consistent with the Z mass. This requirement
+is chosen to suppress the irreducible background from \WZ and \ZZ events.
+\item We veto events if the invariant mass of either hypothesis lepton and a
+third good lepton in the event is $< 12 \GeV$. This requirement is chosen to
+suppress the irreducible background from \gs and low mass resonances.
+\end{itemize}
+
+To reject known machine background resulting in high activity in the pixel
+layers, we require that no fewer than 25\% of the tracks in event are high
+puritn in events having 10 or more tracks. Also, to ensure that there was a
+reconstructed collision, we require that at least on one good primary vertex
+(PV). A good PV is selected by requiring:
+\begin{itemize}
+\item the PV is not considered a fake,
+\item the number of degrees of freedom > 4,
+\item $|\rho| < 2 \cm$,
+\item $|z| < 24 \cm$.
+\end{itemize}
+
+% --------------------------------------------------------------------------- %
+\subsection{Trigger Selection}
+\label{sec:evtsel_trig}
+% --------------------------------------------------------------------------- %
+We use a handful of double lepton trigger paths to select events in data. An
+event in the \ee final state is required to pass the relevant double electron
+trigger, a \mm event must pass the double muon trigger and an \em event is
+required to pass one of the electron-muon cross triggers. Because of the
+rapidly changing trigger menu, many trigger paths were not implemented in the
+simulation and thus no trigger requirement is made here. Instead, as discussed
+in Section~\ref{sec:eff_trig} weight is applied to each event, based on the
+trigger efficiencies measured from data. A list of trigger paths used to select
+signal-like events can be found in in the following table:
+% --------------------------------------------------------------------------- %
+\\
+{\bf \color{red} fix caption}
+\\
+\begin{table}[!hbt]
+\begin{center}
+\begin{tabular}{l|c|c}
+\hline\hline
+Analysis Type         & Channel & Trigger                                                \\ \hline
+\multirow{3}{*}{\hpt} & \ee & \verb=HLT_Ele17_XXLstr_Ele8_XXLstr=                        \\
+                      & \em & \verb=HLT_Mu17_Ele8_XXLstr= or \verb=HLT_Mu8_Ele17_XXLstr= \\
+                      & \mm & \verb=HLT_Mu17_Mu8=                                        \\ \hline
+\multirow{3}{*}{\lpt} & \ee & \verb=HLT_DoubleEle8_CaloIdT_TrkIdVL_Mass8_PFHT175=        \\
+                      & \em & \verb=HLT_Mu8_Ele8_CaloIdT_TrkIdVL_Mass8_PFHT175=          \\
+                      & \mm & \verb=HLT_DoubleMu8_Mass8_PFHT175=                         \\
+\hline\hline
+\end{tabular}
+\caption{\label{tab:evtsel_trig}
+The trigger paths used for the \hpt and \lpt analyses. Note that for the \hpt
+% triggers, \verb=XXLstr= stands for \verb=CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL=
+% which is explained in the text below. For the \lpt triggers, \verb=PFHT175= refers to
+% particle flow based $\HT > 175 \GeV$.
+}
+\end{center}
+\end{table}
+% --------------------------------------------------------------------------- %
+
+The \hpt analysis select event with two leptons having $\pt > 20\ \GeV$.
+Dielectron events in the \hpt triggers are selected using triggers with
+\Et requirements of 17 and 8 \GeV on the two legs. Triggers with electron
+legs impose online calorimeter and tracker identification and isolating
+requirements. The online selection are sufficiently loose compared to the analysis
+selection that little inefficiency is introduced. However, care must be taken
+in the data-driven background estimate so that a bias is not introduced.
+This issue was studied in detail elsewhere and found to not be a significant
+concern~\cite{an_ufl2013}. The electron-muon cross triggers have muon \pt
+requirements of 17 \GeV (8 \GeV) and corresponding \Et requirements of 8 \GeV
+(17 \GeV). The dimuon triggers have only has only a \pt requirement of 17 and 8
+\GeV on the two legs.
+
+The trigger paths used for the inclusive dilepton analyses have lower \pt
+requirements due to the lower threshold on the lepton (i.e.~$\pt > 10\ \GeV$);
+however, they impose an additional \HT requirement to keep the rate within the
+allotted bandwidth. The online \HT requirement was 175 \GeV using particle flow
+based jets. Later runs also imposed a pile-up correct on the \HT calculation.
+All tree channels use triggers that also impose a dilepton invariant mass of
+8 \GeV. The dielectron triggers have an \Et requirement of 8 \GeV on both
+lets. Unlike the \hpt triggers, the electron legs impose only only calorimeter
+and tracker identification requirements. No isolation requirement. The
+electron-muon cross triggers require the same identification requirements on
+the electron leg and select electrons with $\Et > 8\ \GeV$ and muons with $\pt
+> 8\ GeV$. The \pt requirement in the dimuon trigger is 8 \GeV on both legs.
+
+% --------------------------------------------------------------------------- %
+\subsection{Muon Selection}
+\label{sec:evtsel_mu}
+% --------------------------------------------------------------------------- %
+{\bf \color{red} fix reference to muons} \\
+Muon reconstruct was discussed previously in Section~\ref{sec:}. To reject
+fakes with relatively little loss in efficiency, we require muons to be
+reconstructed as both global muons and particle flow muons. To further
+reject fakes and poorly reconstructed muons we apply the following quality
+requirements~\cite{an_ssb2013,muonidtwiki}:
+% --------------------------------------------------------------------------- %
+\begin{itemize}
+\item We require the muon to have $\pt > 20\ \GeV$ and $\pt > 10\ \GeV$ for the
+\hpt and \lpt analysis, respectively.
+\item We require the muon to have $|\eta| < 2.4$ which is the edge of the
+muon detector coverage. Due to the finite luminous region, some muons can
+have a track with $|\eta| > 2.4$; however, we do not consider these as the
+inefficiency is relatively large.
+\item We require that the global fit of the muon have $\chi^2/\rm{ndof} < 10$
+to reject poorly reconstructed muons.
+\item We require that at least one muon sub-detector hit is used in the global
+fit.
+\item We require that at least one hit in the pixel layers.
+\item We require that the muon have at least 6 layers in the silicon tracker,
+to reject poorly reconstructed muons as well as muons originating late in the
+tracker from decays in flight.
+\item We require that the energy deposits in the veto cones are less that
+4 \GeV in the ECAL and 6 \GeV in the HCAL. Veto deposits are calculated in
+cones of size $\DR = 0.07,\ 0.1$ for the ECAL and HCAL, respectively. Vetoing
+on the energy in the cones rejects fake muons produced when hadrons punch
+through the calorimeter into the muons sytem. The requirement can introduce
+an inefficiency for muons with \hpt or in a busy event environment such as a
+\ttbar-like event~\cite{an_098_2008}.
+\item We require the muon to have at least two segments in the muon chambers,
+to reject reconstructed objects that are mis-identified as muons because they
+punched through the calorimeter and be deposited in the first layer of the
+muons system (e.g. from kaons).
+\item We require that the muon have transverse impact parameter (\dzero) $< 50\
+\um$, where the \dzero has been calculated with respect to the primary vertex.
+A tight selection reduces background muons from the decay of b-hadrons, as well
+as decays in flight.
+\item We require that the inner track $z$ be less than 1 mm from the first good
+vertex, which we take to be the event vertex. This requirement helps reject
+mis-reconstructed muons as well as those originating from pile-up interactions.
+\end{itemize}
+% --------------------------------------------------------------------------- %
+The isolation follows the POG recommendation, using particle-flow based        
+isolation with a $\Delta\beta$ correction for PU. However, a smaller cone      
+size of \DR\ $=$ 0.3 is adopted due to the high hadronic activity expected in  
+signal-like events. The isolation calculated using                             
+% --------------------------------------------------------------------------- %
+$$
+\relIso = [ \Sigma_{\rm ch} + {\rm max}(0, \Sigma_{\rm nh} + \Sigma_{\rm ph} - 0.5 \Delta\beta) ]/\pt,
+$$
+% --------------------------------------------------------------------------- %
+where $\Sigma_{\rm ch, nh, ph}$ are the sums of \pt\ of the charged hadron,
+neutral hadron, and photon particle flow candidates, respectively. Here the
+charged hadrons are matched to the PV and a 0.5~\GeV\ threshold is applied
+on neutral hadrons and photons. The $\Delta\beta$ correction is determined
+from the sum \pt\ of charged hadrons not matched to the PV with a threshold of
+0.5~\GeV\ in a cone of the same size as the isolation. The \relIso is required
+to be less than 0.1~\cite{muonpfisotwiki}.
+% --------------------------------------------------------------------------- %
+\subsection{Electron Selection}
+\label{sec:evtsel_el}
+% --------------------------------------------------------------------------- %
+Electrons in this analysis are reconstructed using the Gaussian Sum Filter
+(GSF) algorithm and was discussed in Chapter~\ref{}. For this analysis we
+require the GSF electrons to passed the additional requirement:
+% --------------------------------------------------------------------------- %
+\begin{itemize}
+\item We require the electron to have $\pt > 20\ \GeV$ and $\pt > 10\ \GeV$ for
+the \hpt and \lpt analysis, respectively.
+\item We require the electron to have $|\eta| < 2.4$.
+\item We require the number of missing expected inner hits must be zero.
+\item We require the $H/E < 0.1\ (0.075)$ in the barrel (endcap) to match the
+requirements on the trigger.
+\item We require that the electron have a $|\dzero < 100\ \um$, where the
+\dzero has been calculated with respect to the primary vertex. A tight
+selection on the impact parameter reduces background from fake electrons and
+electrons from photon conversions in the tracker.
+\item We require that there is no muon within a cone of $\DR = 0.1$ about the
+electron. Only muons passed the selection in Section~\ref{sec:evtsel_mu} are
+considered. This veto rejects the situation where a muon is mis-reconstructed
+as an electron.
+\item We require the electron to pass the VBTF80 identification (see
+Table~\ref{tab:evtsel_elid}).
+\item We reject electrons with a supercluster \aeta in the transition region
+between the barrel and endcap of the ECAL ($1.4442 < \aeta_{SC} < 1.566$).
+Electrons in this region are poor reconstructed.
+\item We require that the GSF track $z$ be less than 1 mm from the first
+good vertex, which we take to be the event vertex. This requirement helps
+reject mis-reconstructed electrons as well as those originating from pile-up
+interactions.
+\item We require that all three charge measurements for an electron agree.
+One charge comes from the curvature of the GSF track. A second comes form the
+curvature of the associated CTF track. We require all electrons to have an
+associated CTF track. The last charge, the so-called supercluster charge, is
+determined using the relative position of the supercluster with respect to the
+projected track from the pixel seed.
+\item To reject conversions, we apply a veto of a good reconstructed conversion
+vertex. A conversion vertex is considered good if it has no tracker hits
+towards the beam, has a fit probability above $10^{-6}$, has a displacement of
+more than 2 \cm, and the CTF track matching to the electron should be a part
+of the conversion vertex. No requirement is made on the vertex quality flag
+corresponding to merging and arbitration.
+\end{itemize}
+% --------------------------------------------------------------------------- %
+The isolation follows the POG recommendation, using particle-flow based
+isolation with a cone size of $\DR = 0.3$~\cite{egammapfisotwiki}. In the
+endcap, an inner veto of \DR\ $=$ 0.015 (0.08) is imposed for charged hadrons
+(photons). The isolation is corrected for PU by subtracting from the neutral
+isolation components a term defined by the product of the average event energy
+density and the effective area of the isolation cone~\cite{egammaisorhoaeff}.
+The neutral component after correction is required to be non-negative. The
+isolation relative to the electron \pt\ is required to be less than 0.09.
+
+The VBTF80 identification uses the selection from Table~\ref{tab:evtsel_elid}.
+CMS defines the barrel/endcap transition to be at $|\eta_{SC}| = 1.479$.
+The selection values are chosen to have approximately 80\% efficiency for
+the electrons from W and Z decays. The values reported are from the CMS
+recommended values~\cite{egammaidtwiki}.
+% --------------------------------------------------------------------------- %
+
+\begin{table}[!hbt]
+\begin{center}
+\begin{tabular}{l|c|c}
+\hline\hline
+Selection Variable & Selection Value (barrel) & Selection Value (endcap) \\ \hline
+\sieie             & < 0.01                   & < 0.03                   \\ 
+$\dphi_{in}$       & < 0.06                   & < 0.03                   \\ 
+$\eta{in}$         & < 0.004                  & < 0.007                  \\ 
+$H/E$              & < 0.1                    & < 0.075                  \\ \cline{2-3}
+$(1/E - 1/P)$      & \multicolumn{2}{c}{> 0.05}                          \\ 
+\hline\hline
+\end{tabular}
+\caption{\label{tab:evtsel_elid}
+Details of the modified VBTF80 electron identification.
+}
+\end{center}
+\end{table}
+% --------------------------------------------------------------------------- %
+The \sieie variable cuts on the show shape of the ECAL, Electrons have a
+characteristic shower shape that is narrow in $\eta$ but wide in $\phi$, the latter
+due to the bremsstrahlung in the tracker of the electrons. The $\dphi_{in}$ and
+$\deta_{int}$ variables are cut on the track-to-cluster matching. The final
+variable, $H/E$, is calculated as a ratio of energies in the ECAL and HCAL veto
+cones. An electron is expected to deposit nearly all of its energy in the ECAL,
+while a hadron usually deposits significant energy in the HCAL, as well.
+
+% --------------------------------------------------------------------------- %
+\subsection{Lepton Pair Disambiguation}
+\label{sec:evtsel_pair}
+% --------------------------------------------------------------------------- %
+In events with multiple same-sign lepton pairs passing the selection above,
+only one pair is selected according to the following prescription:
+\begin{itemize}
+\item We give preference to \mm pairs over \em, which are chosen over \ee pairs.
+\item If multiple candidates remain, the pair with the highest scalar sum \pt is chosen.  
+\end{itemize}
+
+% --------------------------------------------------------------------------- %
+\subsection{Jet Selection}
+\label{sec:evtsel_jets}
+% --------------------------------------------------------------------------- %
+We require the presence of energetic hadronic activity in the event as new
+physics with a large cross section is expected to be produced via the strong
+interaction. We choose to use jets built from particle-flow candidates, as
+they provide the best scale and resolution for jets typical of those produced
+in SM process such as \ttbar events. Particle-flow candidate reconstruction
+was discussed in section Section~\ref{sec:cms_pf} and jet reconstruction was
+discussed in Section~\ref{sec:cms_jets}.
+% --------------------------------------------------------------------------- %
+
+\begin{table}[!hbt]
+\begin{center}
+\begin{tabular}{l|c|c}
+\hline\hline
+Selection Variable                           & Selection Value & Comment       \\ \hline
+fraction of energy from neutral hadrons      & < 0.99          &               \\ 
+fraction of energy from neutral EM particles & < 0.99          &               \\ 
+number of particle flow candidates           & > 1             &               \\ 
+fraction of energy from charged hadrons      & > 0             & $\aeta < 2.4$ \\ 
+fraction of energy from charged EM particles & < 0.99          & $\aeta < 2.4$ \\ 
+number of charged particle flow candidates   & > 0             & $\aeta < 2.4$ \\ 
+\hline\hline
+\end{tabular}
+\caption{\label{tab:evtsel_jetid}
+Details of the loose particle flow identification. From~\cite{an_003_2010}.
+}
+\end{center}
+\end{table}
+% --------------------------------------------------------------------------- %
+Jets are reconstructed with the anti-$k_T$
+algorithm with parameter $R = 0.05$. Jets in simulation have L1FastJetL2L3
+corrections applied. Jets in data have L2L3 residual corrections
+applied~\cite{jetcorrtwiki}. Selected jets are required to pass the loose
+particle flow jet ID described in Table~\ref{tab:evtsel_jetid}. These
+selections are very loose and are primarily intended to reject jets that are
+unambiguously due to detector noise. The efficiency of this selection on
+simulation is less than 1\%~\cite{an_003_2010}. Additionally, jets are required to be
+separated by $\DR > 0.4$ from any hypothesis leptons and other leptons passing
+the selection above.
+
+In the event, there must be at least two particle-flow jets with $\pt > 40\
+\GeV$ and $\aeta < 2.4$. The fiducial cut coincides with the extent of the
+tracker. In addition to counting jet, the analysis also makes a selection based
+on the total hadronic activity in the event, \Ht. The \Ht is calculated as the
+scalar sum of the \pt of all jets passing the jet counting criteria discussed
+above. Even a modest \Ht requirement suppresses the background from failures of
+lepton identification in \Wj events. Having two jets in the event imposes
+a minimal \Ht requirement of 80 \GeV.
+
+% --------------------------------------------------------------------------- %
+\subsection{B-Tagging Selection}
+\label{sec:evtsel_btag}
+% --------------------------------------------------------------------------- %
+Jets selected based on the requirements of Section~\ref{sec:evtsel_jets} that
+are b-tagged using the Combined Secondary Vertex Method (CSVM) tagger. This
+tagger identifies jets with discriminant larger than 0.679 as b-tagged. The
+details of b-jet identification was discussed in Section~\ref{sec:cms_btags}.
+
+% --------------------------------------------------------------------------- %
+\subsection{Met Selection}
+\label{sec:evtsel_met}
+% --------------------------------------------------------------------------- %
+Missing transverse energy is a natural requirement for new physics searches.
+Many models contain weakly interacting particles. For example, some of the
+SUSY models considered produce leptons via decay chains ending in a lightest,
+non-interacting particle (LSP). CMS uses three different \met reconstruction
+algorithms, discussed in detail in Section\ref{sec:cms_met}. For this analysis,
+we use \met reconstructed from a vector sum of the particle flow candidates.
+For almost all of the search scenarios, we impose a minimum \met requirement of
+at least 30 \GeV. Event a modest \met requirement is effective at suppressing
+background form Drell-Yan process in the \ee and \em final states where the
+charge on one of the final state electrons is mis-reconstructed.
+
+% --------------------------------------------------------------------------- %
+\subsection{Z and $\gamma$* veto}[Z and Gamma* veto]
+\label{sec:evtsel_zveto}
+% --------------------------------------------------------------------------- %
+One of the primary irreducible backgrounds to the same-sign dilepton search
+comes from \WZ and \ZZ production, where the bosons both decay to leptons.
+A natural same sign hypothesis is formed using a lepton from each of the
+two bosons. In the case of the \WZ, the lepton from the $W$ comes together
+with a neutrino of the same flavor providing a natural source of \met. To
+reduce this background, we reject events for which one of the hypothesis
+leptons and a third lepton in the event have an invariant mass consistent
+with the $Z$, defined to be between 76 and 106 \GeV. Along the same lines, to
+reject events with a virtual photon, we also require the invariant mass to
+be less than 12 \GeV. We require the third lepton to be the same flavor and
+opposite sign and to pass the identification and isolation criteria described
+in Sections\ref{sec:evtsel_el},~\ref{sec:evtsel_mu}.
+
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+\section{Search Regions}
+\label{sec:evtsel_sr}
+% --------------------------------------------------------------------------- %
+% --------------------------------------------------------------------------- %
+As in previous versions of this analysis~\cite{an_ssb2011,an_ssb2012,an_ssb2012hcp},
+there is a minimal baseline selection asking for a same-sign lepton pair and
+at least two jets (or b-tagged jets). Here, we define separately a baseline
+selection for each of the two lepton selections (\hpt and \lpt) in each of the
+b-tagged categories:
+% --------------------------------------------------------------------------- %
+\begin{itemize}
+\item no \bj requirement,
+\item require exactly one \bj,
+\item require two or more \bjs.
+\end{itemize}
+% --------------------------------------------------------------------------- %
+In the baseline regions, a relatively low \met requirement is made in an
+effort to be inclusive to a wide variety of signatures such as same-sign top
+productions or models with R-parity violation. Specifically, for R-parity
+violating models we expect events that have many high \pt jets. Thus a
+relatively high $\Ht>500\ \GeV$ requirement is required when searching for this
+signature and any \met requirement is relaxed. The majority of viable models,
+however, involve leptons arising from $W$ decays and thus naturally have \met
+from the accompanying neutrino. To improve sensitivity to these signatures,
+a region with $\met > 30 \GeV$ is introduced when $\Ht<500\ \GeV$. Table
+\ref{tab:evtsel_srbl} summarizes the baseline search regions used in this
+analysis where we define baselines for each of the analysis types. There are
+a total of nine baseline regions. For convenience, each search region is a
+assigned a number, given in the far right column.
+
+% --------------------------------------------------------------------------- %
+\begin{table}[htb!]
+\begin{center}
+\footnotesize{
+    \begin{tabular}{c|c|c|c|c|c|c}
+    \hline\hline
+    Analysis                  & min lepton \pt ($\mu$, e) (\GeV)  & \Ht (\GeV)           & \met (\GeV)                               & \njets             & \nbtags & Search Region \# \\ \hline
+    \multirow{3}{*}{\hpt}     & \multirow{3}{*}{20, 20}           & \multirow{3}{*}{80}  & \multirow{3}{*}{30 if $\Ht < 500$ else 0} & \multirow{3}{*}{2} & $\ge$ 0 & SR0              \\ \cline{6-7}
+                              &                                   &                      &                                           &                    & = 1     & SR10             \\ \cline{6-7}
+                              &                                   &                      &                                           &                    & $\ge$ 2 & SR20             \\ \hline
+    \multirow{3}{*}{\lpt}     & \multirow{3}{*}{10, 10}           & \multirow{3}{*}{250} & \multirow{3}{*}{30 if $\Ht < 500$ else 0} & \multirow{3}{*}{2} & $\ge$ 0 & SR0              \\ \cline{6-7}
+                              &                                   &                      &                                           &                    & = 1     & SR10             \\ \cline{6-7}
+                              &                                   &                      &                                           &                    & $\ge$ 2 & SR20             \\ \hline
+    \end{tabular}
+}
+\end{center}
+\caption{\label{tab:evtsel_srbl}
+Summary of the baseline search regions considered in the \hpt and \lpt analysis.
+}
+\end{table}  
+
+% --------------------------------------------------------------------------- %
+To improve sensitivity to SUSY scenarios involving top and bottom squark
+production, we define regions with tighter \Ht and \met requirements. In
+contrast from the fall analysis, the results will be interpreted with a shape
+analysis defined in the \met-\Ht plane where the plane is divided into 4 major
+regions:
+% --------------------------------------------------------------------------- %
+\begin{itemize}
+	\item Low-\Ht~Low-\met~region: $200\ \GeV < \Ht < 400\ \GeV$, $50\ \GeV < \met < 120\ \GeV$.
+	\item Low-\Ht~high-\met~region: $200\ \GeV < \Ht < 400\ \GeV$, $\met > 120\ \GeV$.
+	\item high-\Ht~Low-\met~region: $\Ht > 400\ \GeV$, $50\ \GeV < \met < 120\ \GeV$.
+	\item High-\Ht~high-\met~region: $\Ht > 400\ \GeV$, $\met > 120\ \GeV$.
+\end{itemize}
+
+% --------------------------------------------------------------------------- %
+{\bf \color{red} fix reference to SUSY signiture} \\
+As will be discussed in Section~\ref{sec:??}, all of the SUSY scenarios that we
+consider explicitly have at least two quarks, zero to four b-quarks, up to two
+hadronically decaying W bosons, and at least two neutrinos and two LSPs. Thus,
+in all search regions, we require at least 2 jets but the \njets~requirement is
+broken into two categories:
+% --------------------------------------------------------------------------- %
+\begin{itemize}
+\item two to three jets
+\item four or more jets 
+\end{itemize}
+% --------------------------------------------------------------------------- %
+Additionally, the SUSY inspired search regions also have exclusively defined
+values on the \nbtags~with exactly zero, exactly one and two or more b-tagged
+jets.
+% --------------------------------------------------------------------------- %
+The search regions for the \hpt~analysis are summarized in
+table~\ref{tab:evtsel_sr_hpt}.
+
+\begin{table}[!htb]
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+\hline\hline
+\nbtags                   & \met                    & \njets   & \Ht[200-400] & \Ht[$>400$] \\ \hline
+\multirow{4}{*}{$=0$}     & \multirow{2}{*}{50-120} & 2-3      & SR1          & SR2         \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR3          & SR4         \\ \cline{2-5}
+                          & \multirow{2}{*}{$>120$} & 2-3      & SR5          & SR6         \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR7          & SR8         \\ \hline
+\multirow{4}{*}{$=1$}     & \multirow{2}{*}{50-120} & 2-3      & SR11         & SR12        \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR13         & SR14        \\ \cline{2-5}
+                          & \multirow{2}{*}{$>120$} & 2-3      & SR15         & SR16        \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR17         & SR18        \\ \hline
+\multirow{4}{*}{$\geq 2$} & \multirow{2}{*}{50-120} & 2-3      & SR21         & SR22        \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR23         & SR24        \\ \cline{2-5}
+                          & \multirow{2}{*}{$>120$} & 2-3      & SR25         & SR26        \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR27         & SR28        \\ \hline\hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:evtsel_sr_hpt}
+Signal regions selected for the high \pt~search where we require $\Ht>200\ \GeV$.
+}
+\end{table}
+
+% --------------------------------------------------------------------------- %
+The search regions for the \lpt analysis are essentially the same as the
+\hpt analysis with one change. In order to avoid the threshold affect from
+the $\Ht>175\ \GeV$ requirement from the triggers used in \lpt analysis, the
+minimum \Ht requirement is raised to 250 \GeV. The search regions for the \lpt
+analysis are summarized in table~\ref{tab:evtsel_sr_lpt}.
+% --------------------------------------------------------------------------- %
+\begin{table}[!htb]
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+\hline\hline
+\nbtags                   & \met                    & \njets   & \Ht[250-400] & \Ht[$>400$] \\ \hline
+\multirow{4}{*}{$=0$}     & \multirow{2}{*}{50-120} & 2-3      & SR1          & SR2         \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR3          & SR4         \\ \cline{2-5}
+                          & \multirow{2}{*}{$>120$} & 2-3      & SR5          & SR6         \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR7          & SR8         \\ \hline
+\multirow{4}{*}{$=1$}     & \multirow{2}{*}{50-120} & 2-3      & SR11         & SR12        \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR13         & SR14        \\ \cline{2-5}
+                          & \multirow{2}{*}{$>120$} & 2-3      & SR15         & SR16        \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR17         & SR18        \\ \hline
+\multirow{4}{*}{$\geq 2$} & \multirow{2}{*}{50-120} & 2-3      & SR21         & SR22        \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR23         & SR24        \\ \cline{2-5}
+                          & \multirow{2}{*}{$>120$} & 2-3      & SR25         & SR26        \\ \cline{3-5}
+                          &                         & $\geq 4$ & SR27         & SR28        \\ \hline\hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:evtsel_sr_lpt}
+Signal regions selected for the \lpt search where we require
+$\Ht>250\ \GeV$.
+}
+\end{table}  
+
+% --------------------------------------------------------------------------- %
